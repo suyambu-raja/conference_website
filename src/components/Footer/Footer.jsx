@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer__column">
           <h2 className="footer__logo">ICCSB — 2026</h2>
           <p className="footer__text">
-            ICCSB 2026 is a premier international forum for researchers, engineers, and practitioners to share findings in the fields of Computing, Business Intelligence, and Engineering Technologies. Organized by the Knowledge Institute of Technology.
+            ICCSB 2026 is a premier international forum for researchers, engineers, and practitioners to share findings in the fields of Computing, Business Intelligence, and Engineering Technologies. Organized by the Prathyusha Engineering College.
           </p>
           <div className="footer__socials">
             <a href="#" className="footer__social-link" title="LinkedIn" aria-label="LinkedIn">
@@ -54,7 +54,7 @@ function Footer() {
           <h3 className="footer__heading">Contact Us</h3>
           <div className="footer__contact-item">
             <span className="footer__contact-icon">📍</span>
-            <span>Knowledge Institute of Technology,<br />Salem, Tamil Nadu, India.</span>
+            <span>Prathyusha Engineering College,<br />Thiruvallur, Tamil Nadu, India.</span>
           </div>
           <div className="footer__contact-item">
             <span className="footer__contact-icon">📧</span>

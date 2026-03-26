@@ -1,11 +1,11 @@
 /* ===== Footer Styles ===== */
 
 .footer {
-  background: radial-gradient(circle at top right, #252525, #121212);
+  background: #0b0d3e; /* Specific deep blue from reference */
   color: #ffffff;
   padding: 80px 5% 40px;
   font-family: var(--font-primary);
-  border-top: 4px solid #f75d00;
+  border-top: 4px solid var(--color-primary);
 }
 
 .footer__container {
@@ -25,7 +25,7 @@
 .footer__logo {
   font-size: 28px;
   font-weight: 900;
-  color: #f75d00;
+  color: var(--color-primary);
   margin-bottom: 24px;
   letter-spacing: 1px;
 }
@@ -53,7 +53,7 @@
   bottom: 0;
   width: 40px;
   height: 2px;
-  background-color: #f75d00;
+  background-color: var(--color-primary);
 }
 
 .footer__links {
@@ -72,7 +72,7 @@
 }
 
 .footer__link:hover {
-  color: #f75d00;
+  color: var(--color-primary);
   transform: translateX(5px);
 }
 
@@ -86,7 +86,7 @@
 }
 
 .footer__contact-icon {
-  color: #f75d00;
+  color: var(--color-primary);
   font-size: 18px;
   flex-shrink: 0;
 }
@@ -127,10 +127,10 @@
 }
 
 .footer__social-link:hover {
-  background-color: #f75d00;
+  background-color: var(--color-primary);
   color: #ffffff;
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 5px 15px rgba(247, 93, 0, 0.4);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
 }
 
 /* Responsive */

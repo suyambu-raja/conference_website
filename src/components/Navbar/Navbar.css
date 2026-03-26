@@ -2,15 +2,33 @@
 
 .navbar {
   display: flex;
+  flex-direction: column;
+  background-color: #0a0c29; /* Matches newly provided dark theme */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar__main {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
   padding: 0 50px;
-  background-color: var(--color-white);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.navbar__college-bar {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 1px;
 }
 
 /* ----- Logo Area ----- */
@@ -19,18 +37,19 @@
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .navbar__logo {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 1px solid #10418c;
+  border: 1px solid #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #10418c;
+  color: #fff;
   font-size: 8px;
   font-weight: 700;
   line-height: 1;
@@ -39,13 +58,13 @@
 .navbar__logo svg {
   width: 20px;
   height: 20px;
-  fill: #10418c;
+  fill: #fff;
   margin-bottom: 2px;
 }
 
 .navbar__title {
-  color: #222;
-  font-size: 22px;
+  color: #fff;
+  font-size: 24px;
   font-weight: 800;
   font-family: var(--font-primary);
   letter-spacing: 0.5px;
@@ -59,25 +78,35 @@
 }
 
 .navbar__link {
-  color: #333;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 15px;
   font-weight: 700;
   padding: 8px 0;
-  border-radius: 4px;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
   white-space: nowrap;
   position: relative;
 }
 
 .navbar__link:hover {
-  color: var(--color-primary);
+  color: #fff;
 }
 
 .navbar__link--active {
-  color: var(--color-primary);
+  color: #fff;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 /* Conference dropdown indicator */
+.navbar__dropdown-container {
+  position: relative;
+}
+
+.navbar__link-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
 .navbar__link--dropdown {
   display: flex;
   align-items: center;
@@ -85,24 +114,99 @@
 }
 
 .navbar__dropdown-arrow {
-  font-size: 10px;
-  transition: transform 0.2s ease;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px;
+  transition: transform 0.3s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar__link--dropdown:hover .navbar__dropdown-arrow {
+.navbar__dropdown-arrow:hover {
+  color: var(--color-primary);
+}
+
+.navbar__dropdown-arrow--open {
   transform: rotate(180deg);
+  color: var(--color-primary);
+}
+
+/* Dropdown Card Styling */
+.navbar__dropdown-card {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-white);
+  min-width: 180px;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  animation: slideInDown 0.3s forwards ease-out;
+  z-index: 100;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.navbar__dropdown-item {
+  display: block;
+  padding: 10px 20px;
+  color: #444;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.navbar__dropdown-item:hover,
+.navbar__dropdown-item--active {
+  background-color: #f8f9fa;
+  color: var(--color-primary);
+  padding-left: 24px;
+}
+
+/* Add a pointer arrow on top of the card */
+.navbar__dropdown-card::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-white);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-left: 1px solid rgba(0,0,0,0.05);
 }
 
 /* ----- CTA Button ----- */
 .navbar__cta {
-  background-color: #f75d00;
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: #0a0c29; /* Matches navbar background for high contrast */
   font-size: 13px;
-  font-weight: 800;
-  padding: 12px 24px;
-  border-radius: 4px;
+  font-weight: 900;
+  padding: 12px 32px;
+  border-radius: 50px; /* Pill Shape */
   letter-spacing: 0.8px;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition: all 0.3s ease;
   white-space: nowrap;
   text-transform: uppercase;
   flex-shrink: 0;
@@ -111,8 +215,10 @@
 }
 
 .navbar__cta:hover {
-  background-color: #e05400;
-  transform: translateY(-1px);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
 .navbar__cta-arrow {
@@ -131,27 +237,32 @@
 
 /* ----- Responsive ----- */
 @media (max-width: 960px) {
-  .navbar {
+  .navbar__main {
     padding: 0 20px;
     height: 70px;
   }
 
+  .navbar__college-bar {
+    font-size: 14px; /* Smaller font on mobile */
+    padding: 8px 10px;
+  }
+
   .navbar__mobile-toggle {
     display: block;
+    color: #fff;
   }
 
   .navbar__links {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 100%; /* Position below the entire navbar including the college bar */
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: var(--color-white);
-    padding: 16px 20px;
-    gap: 12px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    background-color: #0a0c29;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
   }
 
   .navbar__links--open {
@@ -166,5 +277,38 @@
 
   .navbar__cta {
     display: none;
+  }
+
+  .navbar__dropdown-container {
+    width: 100%;
+  }
+
+  .navbar__link-wrapper {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .navbar__dropdown-card {
+    position: static;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+    background-color: #fcfcfc;
+    margin-top: 0;
+    padding-left: 20px;
+    animation: none;
+    visibility: visible;
+    opacity: 1;
+    border: none;
+    border-left: 2px solid var(--color-primary);
+    border-radius: 0;
+  }
+
+  .navbar__dropdown-card::before {
+    display: none;
+  }
+
+  .navbar__dropdown-item {
+    padding: 12px 10px;
   }
 }

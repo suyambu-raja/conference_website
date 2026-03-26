@@ -1,0 +1,94 @@
+/* SubPageHeader Styles */
+
+.sub-header {
+  height: 400px; /* Reduced height compared to home hero */
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.sub-header__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(37, 99, 235, 0.7) 0%, /* Primary Blue with transparency */
+    rgba(15, 23, 42, 0.9) 100%    /* Deep Navy */
+  );
+  z-index: 2;
+}
+
+.sub-header__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.sub-header__title {
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+  text-transform: capitalize;
+  font-family: var(--font-primary);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.sub-header__breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 25px;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.breadcrumb-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #fff;
+}
+
+.breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.breadcrumb-current {
+  color: #fff;
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sub-header {
+    height: 300px;
+  }
+
+  .sub-header__title {
+    font-size: 36px;
+  }
+
+  .sub-header__breadcrumb {
+    font-size: 14px;
+  }
+}
