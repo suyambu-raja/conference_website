@@ -22,7 +22,7 @@ function Hero() {
         <div className="hero__left">
             {/* AICTE Sponsorship Banner */}
             <div className="hero__aicte">
-              <img src={aicteLogo} alt="AICTE Logo" style={{width: '120px', height: '120px'}} />
+              <img src={aicteLogo} alt="AICTE Logo" className="hero__aicte-img" />
               <div className="hero__aicte-content">
                 <h3 className="hero__aicte-title">
                  International Conference on Innovations, Technological Breakthroughs, and Applications in Computational Biophysics, Synthetic Biology, and Biomanufacturing

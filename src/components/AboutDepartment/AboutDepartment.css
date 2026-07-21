@@ -171,8 +171,17 @@
     font-size: 30px;
   }
 
+  /* Single column so the 320px min-width tracks can't overflow narrow phones */
+  .about-dept__cards {
+    grid-template-columns: 1fr;
+  }
+
   .dept-card,
   .vm-card {
     padding: 28px 24px;
+  }
+
+  .dept-card__name {
+    font-size: 21px;
   }
 }

@@ -551,6 +551,23 @@
     padding: 16px 22px;
   }
 
+  /* Collapse all card/roster grids to a single column so the fixed
+     min-track widths (250–320px) can never overflow narrow phones. */
+  .committee-grid,
+  .roster-grid,
+  .topics-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .committee-group__title {
+    font-size: 21px;
+  }
+
+  .venue-map {
+    height: 300px;
+  }
+
   .date-row,
   .fee-row {
     flex-direction: column;
