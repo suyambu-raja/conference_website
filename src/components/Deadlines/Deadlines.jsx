@@ -2,16 +2,16 @@ import './Deadlines.css';
 
 const DEADLINE_ITEMS = [
   {
-    title: 'Full-Length Paper Submission Deadline',
-    date: '30 March, 2026',
+    title: 'Paper Submission Deadline',
+    date: '17 August, 2026',
   },
   {
     title: 'Registration Deadline',
-    date: '12 April, 2026',
+    date: '31 August, 2026',
   },
   {
     title: 'Conference Dates',
-    date: '11-13, May 2026',
+    date: '10 & 11 September, 2026',
   },
 ];
 

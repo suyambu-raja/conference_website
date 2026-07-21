@@ -12,7 +12,7 @@ function About() {
         </div>
         <div className="iccnct-desc-col">
           <p className="iccnct-para">
-            The 6<sup>th</sup> International conference on Computing, Business Intelligence and Engineering Technologies (ICCSB - 2026) will provide an excellent international forum for sharing knowledge and results in theory, methodology and applications of Computing, Business Intelligence and Engineering Technologies. The conference looks for significant contributions to all major fields of the Computer Science and Information Technology in theoretical and practical aspects.
+            The International Conference on Innovations, Technological Breakthroughs &amp; Applications in Computational Biophysics, Synthetic Biology &amp; Biomanufacturing (ICCSB&nbsp;2026) aims to bring together researchers, academicians, industry professionals, scientists, and students to share their latest research, innovations, and technological applications in computational biophysics, synthetic biology, and biomanufacturing. It provides a dynamic platform to discuss emerging trends, interdisciplinary research, and sustainable solutions for healthcare, pharmaceuticals, agriculture, and industry.
           </p>
         </div>
       </div>

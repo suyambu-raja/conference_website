@@ -1,51 +1,79 @@
 import Navbar from '../../components/Navbar/Navbar';
 import SubPageHeader from '../../components/SubPageHeader/SubPageHeader';
 import Footer from '../../components/Footer/Footer';
+import registerQr from '../../assets/register-qr.svg';
+import '../SubPage.css';
+
+const REGISTER_LINK = 'https://forms.gle/XCEKqZWyvrXVFe1d9';
+
+const INDIAN_FEES = [
+  ['UG Students', 'Rs. 300/-'],
+  ['PG Students / Research Scholars', 'Rs. 500/-'],
+  ['Academicians', 'Rs. 750/-'],
+  ['Industry Professionals', 'Rs. 1000/-'],
+];
+
+const INTERNATIONAL_FEES = [
+  ['International Participants', 'USD 50/-'],
+];
 
 const Registration = () => {
   return (
-    <div className="sub-page">
+    <div className="subpage">
       <Navbar />
       <SubPageHeader title="Registration" />
-      <div className="sub-page__content" style={{ padding: '100px 50px', maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '36px', color: 'var(--color-primary)', marginBottom: '30px' }}>Register for ICCSB 2026</h2>
-        
-        <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '24px', color: '#222', marginBottom: '20px' }}>Registration Deadline: <span style={{ color: 'var(--color-primary)' }}>July 10, 2026</span></h3>
-        </div>
 
-        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', backgroundColor: '#f9f9f9', padding: '40px', borderRadius: '15px', boxShadow: '0 5px 20px rgba(0,0,0,0.05)' }}>
-          <h3 style={{ fontSize: '28px', color: 'var(--color-primary)', borderBottom: '2px solid var(--color-primary)', paddingBottom: '10px', marginBottom: '25px' }}>Registration Fees</h3>
-          
-          <div style={{ marginBottom: '35px' }}>
-            <h4 style={{ fontSize: '22px', color: '#333', marginBottom: '15px' }}>Indian Participants</h4>
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #ddd' }}>
-              <span>Presenting Author</span>
-              <span style={{ fontWeight: 'bold' }}>Rs. 1000/-</span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0' }}>
-              <span>Listener</span>
-              <span style={{ fontWeight: 'bold' }}>Rs. 500/-</span>
-            </div>
-          </div>
+      <div className="subpage__body">
+        <span className="subpage__eyebrow">ICCSB 2026</span>
+        <h2 className="subpage__heading">Register for ICCSB 2026</h2>
+        <div className="subpage__heading-underline" />
 
-          <div>
-            <h4 style={{ fontSize: '22px', color: '#333', marginBottom: '15px' }}>International Participants</h4>
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #ddd' }}>
-              <span>Presenting Author</span>
-              <span style={{ fontWeight: 'bold' }}>USD. 50/-</span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0' }}>
-              <span>Listener</span>
-              <span style={{ fontWeight: 'bold' }}>USD. 25/-</span>
-            </div>
+        <div className="center">
+          <div className="highlight-banner">
+            Registration Deadline:&nbsp;<strong>31 August 2026</strong>
           </div>
         </div>
 
-        <p style={{ fontSize: '18px', color: '#666', lineHeight: '1.6', marginTop: '40px' }}>
-          Follow the registration process once the portal opens. For any queries, please visit the Contact page.
+        <p className="subpage__lead">
+          Registration fees vary by participant category. The fee covers access to all conference sessions,
+          the digital conference kit, and inclusion of accepted papers in the proceedings.
         </p>
+
+        <div className="fee-wrap" style={{ marginTop: '40px' }}>
+          <div className="fee-block">
+            <h3 className="fee-block__title">Indian Participants</h3>
+            {INDIAN_FEES.map(([label, price]) => (
+              <div key={label} className="fee-row">
+                <span className="fee-row__label">{label}</span>
+                <span className="fee-row__price">{price}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="fee-block">
+            <h3 className="fee-block__title">International Participants</h3>
+            {INTERNATIONAL_FEES.map(([label, price]) => (
+              <div key={label} className="fee-row">
+                <span className="fee-row__label">{label}</span>
+                <span className="fee-row__price">{price}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="subpage__cta">
+          <a href={REGISTER_LINK} target="_blank" rel="noopener noreferrer" className="subpage__btn">
+            Register Now →
+          </a>
+        </div>
+
+        <a href={REGISTER_LINK} target="_blank" rel="noopener noreferrer" className="qr-card">
+          <img src={registerQr} alt="QR code to register for ICCSB 2026" className="qr-card__img" />
+          <span className="qr-card__caption">Scan to Register</span>
+          <span className="qr-card__hint">Point your phone camera at the code</span>
+        </a>
       </div>
+
       <Footer />
     </div>
   );

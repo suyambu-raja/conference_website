@@ -1,20 +1,44 @@
-import SubPageHeader from '../../components/SubPageHeader/SubPageHeader';
 import Navbar from '../../components/Navbar/Navbar';
+import SubPageHeader from '../../components/SubPageHeader/SubPageHeader';
 import Footer from '../../components/Footer/Footer';
+import '../SubPage.css';
 
 const Venue = () => {
   return (
-    <div className="sub-page">
+    <div className="subpage">
       <Navbar />
       <SubPageHeader title="Venue and Location" />
-      <div className="sub-page__content" style={{ padding: '100px 50px', maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '36px', color: 'var(--color-primary)', marginBottom: '30px' }}>Our Location</h2>
-        <div style={{ padding: '40px', background: '#f8f9fa', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)', textAlign: 'left', marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '24px', color: '#222', marginBottom: '15px' }}>Conference Host</h3>
-          <p style={{ fontSize: '18px', color: '#444' }}>Our institution's campus provides state-of-the-art facilities for ICCSB 2026. Detailed maps and accommodation info will be available here.</p>
+
+      <div className="subpage__body">
+        <span className="subpage__eyebrow">Hybrid Mode</span>
+        <h2 className="subpage__heading">Conference Venue</h2>
+        <div className="subpage__heading-underline" />
+        <p className="subpage__lead">
+          ICCSB&nbsp;2026 will be conducted in Hybrid Mode. On-campus sessions will be held at Prathyusha
+          Engineering College, while remote participants can join and present online.
+        </p>
+
+        <div style={{ maxWidth: '860px', margin: '40px auto 0' }}>
+          <div className="info-card">
+            <div className="info-card__title">📍 Prathyusha Engineering College (Autonomous)</div>
+            <p className="info-card__text">
+              Poonamallee&ndash;Tiruvallur Road, Tiruvallur &ndash; 602025, Tamil Nadu, India.<br />
+              NAAC &lsquo;A&rsquo; Grade Institution &amp; NBA-Accredited Programmes.
+            </p>
+          </div>
         </div>
-        <p style={{ fontSize: '18px', color: '#666', lineHeight: '1.6' }}>We provide full details about travel arrangements, parking, and nearby hotels once the final event logistics are confirmed.</p>
+
+        <div style={{ maxWidth: '960px', margin: '30px auto 0' }}>
+          <iframe
+            title="Prathyusha Engineering College location map"
+            className="venue-map"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Prathyusha%20Engineering%20College%2C%20Tiruvallur&output=embed"
+          />
+        </div>
       </div>
+
       <Footer />
     </div>
   );

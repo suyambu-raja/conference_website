@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import campusImg from '../../assets/campus1.png';
+import campusImg from '../../assets/campus1.jpg';
 import aicteLogo from '../../assets/aicte.png';
 import './Hero.css';
 
@@ -28,8 +28,8 @@ function Hero() {
                  International Conference on Innovations, Technological Breakthroughs, and Applications in Computational Biophysics, Synthetic Biology, and Biomanufacturing
                 </h3>
                 <p className="hero__aicte-text">
-                  17th and 18th August 2026 Organized by the Department of CSE and Physics<br />
-                  Prathyusha Engineering College, Thiruvallur.
+                  10<sup>th</sup> &amp; 11<sup>th</sup> September 2026 &nbsp;•&nbsp; Hybrid Mode<br />
+                  Organized by the Departments of CSE &amp; Physics, Prathyusha Engineering College, Tiruvallur.
                 </p>
               </div>
             </div>
@@ -41,7 +41,7 @@ function Hero() {
               ICCSB <span className="hero__title-dash">—</span> 2026
             </h1>
 
-            <p className="hero__date">17-18, AUG 2026</p>
+            <p className="hero__date">10 &amp; 11 SEPTEMBER 2026 &nbsp;|&nbsp; HYBRID MODE</p>
 
             {/* Action Buttons */}
             <div className="hero__actions">

@@ -1,28 +1,61 @@
 import Navbar from '../../components/Navbar/Navbar';
 import SubPageHeader from '../../components/SubPageHeader/SubPageHeader';
 import Footer from '../../components/Footer/Footer';
+import '../SubPage.css';
+
+const SUBMISSION_LINK = 'https://forms.gle/XCEKqZWyvrXVFe1d9';
+
+const GUIDELINES = [
+  'Submit original, unpublished research work aligned with the conference theme.',
+  'Papers must not be under review or consideration by any other conference or journal.',
+  'All submissions will undergo a peer-review process for quality and relevance.',
+  'At least one author of each accepted paper must register and present the work.',
+  'Presentations may be made either on-campus or online, as the conference runs in Hybrid Mode.',
+];
 
 const Submission = () => {
   return (
-    <div className="sub-page">
+    <div className="subpage">
       <Navbar />
       <SubPageHeader title="Submission" />
-      <div className="sub-page__content" style={{ padding: '100px 50px', maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '36px', color: 'var(--color-primary)', marginBottom: '30px' }}>Submit Your Research</h2>
-        <div style={{
-          backgroundColor: '#ffcc00', 
-          padding: '20px', 
-          borderRadius: '10px', 
-          display: 'inline-block', 
-          marginBottom: '40px',
-          boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-        }}>
-          <h3 style={{ margin: '0', color: '#222', fontSize: '24px' }}>Paper Submission Deadline: <span style={{ color: '#d00', fontWeight: 'bold' }}>June 15, 2026</span></h3>
+
+      <div className="subpage__body">
+        <span className="subpage__eyebrow">ICCSB 2026</span>
+        <h2 className="subpage__heading">Submit Your Research</h2>
+        <div className="subpage__heading-underline" />
+
+        <div className="center">
+          <div className="highlight-banner">
+            Paper Submission Deadline:&nbsp;<strong>17 August 2026</strong>
+          </div>
         </div>
-        <p style={{ fontSize: '18px', color: '#666', lineHeight: '1.6' }}>
-          Follow our submission guidelines to submit your research to ICCSB 2026. Detailed instructions will be available soon.
+
+        <p className="subpage__lead">
+          Researchers, academicians, industry professionals, research scholars, and students are invited
+          to submit their original research contributions to ICCSB&nbsp;2026 through the official
+          submission portal.
         </p>
+
+        <div className="subpage__section" style={{ marginTop: '48px' }}>
+          <h2 className="subpage__heading">Submission Guidelines</h2>
+          <div className="subpage__heading-underline" />
+          <div className="fee-wrap">
+            {GUIDELINES.map((g, i) => (
+              <div key={i} className="topic-item" style={{ marginBottom: '14px' }}>
+                <span className="topic-item__num">{i + 1}</span>
+                <span className="topic-item__label">{g}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="subpage__cta">
+          <a href={SUBMISSION_LINK} target="_blank" rel="noopener noreferrer" className="subpage__btn">
+            Go to Submission Portal →
+          </a>
+        </div>
       </div>
+
       <Footer />
     </div>
   );

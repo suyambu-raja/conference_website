@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
+import clgLogo from '../../assets/clgLogo.png';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '/' },
@@ -10,7 +11,6 @@ const NAV_ITEMS = [
     dropdown: true,
     submenu: [
       { label: 'Committee', href: '/committee' },
-      { label: 'Keynote', href: '/keynote' },
       { label: 'Venue', href: '/venue' },
       { label: 'Key Dates', href: '/key-dates' },
     ],
@@ -56,10 +56,11 @@ function Navbar() {
       <div className="navbar__main">
         {/* Brand / Logo */}
         <Link to="/" className="navbar__brand">
-          <div className="navbar__logo">
-            ICCSB
+          <img src={clgLogo} alt="College Logo" className="navbar__brand-logo" />
+          <div className="navbar__brand-text">
+            <h1 className="navbar__college-name">PRATHYUSHA ENGINEERING COLLEGE</h1>
+            <p className="navbar__college-tagline">AN AUTONOMOUS INSTITUTION</p>
           </div>
-          <span className="navbar__title">ICCSB 2026</span>
         </Link>
 
         {/* Mobile hamburger */}
@@ -141,15 +142,6 @@ function Navbar() {
             );
           })}
         </ul>
-
-        {/* CTA Button */}
-        <Link to="/submission" className="navbar__cta">
-          Submission <span className="navbar__cta-arrow">→</span>
-        </Link>
-      </div>
-
-      <div className="navbar__college-bar">
-        PRATHYUSHA ENGINEERING COLLEGE
       </div>
     </nav>
   );

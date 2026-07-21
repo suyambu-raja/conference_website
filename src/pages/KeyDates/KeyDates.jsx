@@ -1,29 +1,39 @@
-import SubPageHeader from '../../components/SubPageHeader/SubPageHeader';
 import Navbar from '../../components/Navbar/Navbar';
+import SubPageHeader from '../../components/SubPageHeader/SubPageHeader';
 import Footer from '../../components/Footer/Footer';
+import '../SubPage.css';
+
+const DATES = [
+  ['Paper Submission', '17 August 2026'],
+  ['Acceptance Notification', '24 August 2026'],
+  ['Registration Deadline', '31 August 2026'],
+  ['Conference Dates', '10 & 11 September 2026'],
+];
 
 const KeyDates = () => {
   return (
-    <div className="sub-page">
+    <div className="subpage">
       <Navbar />
       <SubPageHeader title="Key Dates" />
-      <div className="sub-page__content" style={{ padding: '100px 50px', maxWidth: '1200px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '36px', color: 'var(--color-primary)', marginBottom: '40px', textAlign: 'center' }}>Important Deadlines</h2>
-        <div style={{ display: 'grid', gap: '30px', maxWidth: '800px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '20px', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-                <span style={{ fontSize: '20px', color: '#222', fontWeight: '800' }}>Paper Submission</span>
-                <span style={{ fontSize: '20px', color: 'var(--color-primary)', fontWeight: '800' }}>June 15, 2026</span>
+
+      <div className="subpage__body">
+        <span className="subpage__eyebrow">ICCSB 2026 · Hybrid Mode</span>
+        <h2 className="subpage__heading">Important Dates</h2>
+        <div className="subpage__heading-underline" />
+        <p className="subpage__lead">
+          Mark these deadlines to be part of ICCSB&nbsp;2026. Authors are encouraged to submit early.
+        </p>
+
+        <div className="date-list" style={{ marginTop: '44px' }}>
+          {DATES.map(([label, value]) => (
+            <div key={label} className="date-row">
+              <span className="date-row__label">{label}</span>
+              <span className="date-row__value">{value}</span>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '20px', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-                <span style={{ fontSize: '20px', color: '#222', fontWeight: '800' }}>Acceptance Notification</span>
-                <span style={{ fontSize: '20px', color: 'var(--color-primary)', fontWeight: '800' }}>June 25, 2026</span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '20px', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-                <span style={{ fontSize: '20px', color: '#222', fontWeight: '800' }}>Registration Deadline</span>
-                <span style={{ fontSize: '20px', color: 'var(--color-primary)', fontWeight: '800' }}>July 10, 2026</span>
-            </div>
+          ))}
         </div>
       </div>
+
       <Footer />
     </div>
   );
