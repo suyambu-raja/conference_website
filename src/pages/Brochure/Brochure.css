@@ -1,0 +1,428 @@
+.brochure-page {
+  /* Use a system font similar to the brochure's clean sans-serif */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0B1225; /* Dark Navy Base */
+  color: #fff;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.brochure-page * {
+  box-sizing: border-box;
+}
+
+.brochure-page h1, 
+.brochure-page h2, 
+.brochure-page h3, 
+.brochure-page h4 {
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.brochure-page ul {
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+.brochure-page li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.brochure-page p {
+  font-size: 0.95rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Backgrounds */
+.brochure-page__navy {
+  background-color: #0B1225;
+  color: #fff;
+}
+
+.brochure-page__yellow {
+  background-color: #F5B400;
+  color: #0B1225;
+}
+
+.brochure-page__white {
+  background-color: #ffffff;
+  color: #0B1225;
+}
+
+/* Layout */
+.brochure-page__section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 100vh;
+}
+
+.brochure-page__col {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Text alignment & accents */
+.brochure-page__center-text {
+  text-align: center;
+}
+.brochure-page__center-text p {
+  text-align: center;
+}
+
+.brochure-page__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+/* Golden ring decorations */
+.brochure-page__rings {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(245, 180, 0, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.brochure-page__rings::before,
+.brochure-page__rings::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(245, 180, 0, 0.4);
+  border-radius: 50%;
+}
+.brochure-page__rings::before {
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+}
+.brochure-page__rings::after {
+  top: 20px; left: 20px; right: 20px; bottom: 20px;
+}
+
+.brochure-page__rings--top-left {
+  top: -75px;
+  left: -75px;
+}
+.brochure-page__rings--bottom-right {
+  bottom: -75px;
+  right: -75px;
+  border-color: rgba(11, 18, 37, 0.2);
+}
+.brochure-page__rings--bottom-right::before,
+.brochure-page__rings--bottom-right::after {
+  border-color: rgba(11, 18, 37, 0.15);
+}
+.brochure-page__rings--bottom-left {
+  bottom: -75px;
+  left: -75px;
+}
+.brochure-page__rings--dots {
+  background-image: radial-gradient(#F5B400 20%, transparent 20%);
+  background-size: 10px 10px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  border-radius: 0;
+  opacity: 0.5;
+}
+
+
+/* Cover Section (Page 1, Col 3) */
+.brochure-page__cover-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 180px;
+  background-color: #F5B400;
+  border-bottom-left-radius: 50% 30px;
+  border-bottom-right-radius: 50% 30px;
+  z-index: 1;
+}
+
+.brochure-page__cover-header::before {
+  content: '';
+  position: absolute;
+  top: -20px; left: -20px; right: -20px; bottom: -20px;
+  border: 2px solid #0B1225;
+  border-radius: 50%;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.brochure-page__cover-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.brochure-page__logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.brochure-page__logo-pec {
+  width: 100px;
+  height: 100px;
+}
+
+.brochure-page__college-name {
+  color: #c00; /* Dark Red */
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+.brochure-page__autonomous {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0B1225;
+  margin-bottom: 15px;
+}
+.brochure-page__accreditation {
+  color: #c00;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-top: 2px solid #c00;
+  border-bottom: 2px solid #c00;
+  padding: 5px 0;
+  margin-bottom: 5px;
+}
+.brochure-page__address {
+  color: #c00;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.brochure-page__depts {
+  color: #0B1225;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.brochure-page__campus-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.brochure-page__aicte-logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+.brochure-page__sponsored {
+  color: #F5B400;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+.brochure-page__conf-title {
+  color: #0B1225;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.brochure-page__dates {
+  color: #F5B400;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+/* Patrons Section (Page 1, Col 2) */
+.brochure-page__patron-block {
+  margin-bottom: 20px;
+}
+.brochure-page__patron-role {
+  color: #F5B400;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.brochure-page__patron-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.brochure-page__patron-desc {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.brochure-page__info-box {
+  background-color: #fff;
+  color: #0B1225;
+  padding: 20px;
+  margin: 15px -40px; /* Bleed out */
+  text-align: center;
+}
+.brochure-page__info-box h3 {
+  color: #0B1225;
+  margin-bottom: 15px;
+}
+
+.brochure-page__table {
+  width: 100%;
+  font-size: 0.85rem;
+  text-align: left;
+  border-collapse: collapse;
+}
+.brochure-page__table td {
+  padding: 4px 0;
+  font-weight: 600;
+}
+.brochure-page__table td:last-child {
+  text-align: right;
+  color: #0B1225;
+}
+
+/* QR Code */
+.brochure-page__qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.brochure-page__qr-code {
+  width: 180px;
+  height: 180px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.brochure-page__contact-block {
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+.brochure-page__contact-block p {
+  margin-bottom: 5px;
+}
+
+/* Topics list */
+.brochure-page__topics-list {
+  list-style: decimal inside;
+  padding-left: 0;
+}
+.brochure-page__topics-list li {
+  color: #F5B400;
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+}
+
+.brochure-page__divider {
+  border: 0;
+  height: 1px;
+  background-color: rgba(11, 18, 37, 0.15);
+  margin: 15px 0 20px 0;
+}
+
+/* Download Section */
+.brochure-page__download-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brochure-page__download-btn {
+  display: inline-block;
+  background-color: #F5B400;
+  color: #0B1225;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 180, 0, 0.3);
+}
+
+.brochure-page__download-btn--navy {
+  background-color: #0B1225;
+  color: #F5B400;
+  box-shadow: 0 4px 15px rgba(11, 18, 37, 0.4);
+}
+
+.brochure-page__download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+.brochure-page__fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .brochure-page__section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* On tablet, reorder the cover to the top */
+  .brochure-page__cover-col {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .brochure-page__section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  /* Logical stacking order for mobile */
+  /* Page 1 */
+  .brochure-page__section-1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .brochure-page__section-1 .brochure-page__col:nth-child(3) { order: 1; } /* Cover */
+  .brochure-page__section-1 .brochure-page__col:nth-child(2) { order: 2; } /* Patrons */
+  .brochure-page__section-1 .brochure-page__col:nth-child(1) { order: 3; } /* Committees */
+  
+  /* Page 2 */
+  .brochure-page__section-2 {
+    display: flex;
+    flex-direction: column;
+  }
+  /* Reads fine top-to-bottom: Institution -> Dept -> Conference */
+}

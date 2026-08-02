@@ -13,6 +13,7 @@ const NAV_ITEMS = [
       { label: 'Committee', href: '/committee' },
       { label: 'Venue', href: '/venue' },
       { label: 'Key Dates', href: '/key-dates' },
+      { label: 'Brochure', href: '/brochure' },
     ],
   },
   { label: 'Call for Papers', href: '/call-for-papers' },

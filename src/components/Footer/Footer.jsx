@@ -34,6 +34,7 @@ function Footer() {
             <li><Link to="/submission" className="footer__link">Paper Submission</Link></li>
             <li><Link to="/publication" className="footer__link">Publication</Link></li>
             <li><Link to="/venue" className="footer__link">Venue</Link></li>
+            <li><Link to="/brochure" className="footer__link">Brochure</Link></li>
             <li><Link to="/contact" className="footer__link">Contact</Link></li>
           </ul>
         </div>

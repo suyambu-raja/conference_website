@@ -16,6 +16,7 @@ import Submission from './pages/Submission/Submission';
 import Publication from './pages/Publication/Publication';
 import Registration from './pages/Registration/Registration';
 import Contact from './pages/Contact/Contact';
+import Brochure from './pages/Brochure/Brochure';
 import './App.css';
 
 const ScrollToTop = () => {
@@ -64,6 +65,7 @@ function App() {
           <Route path="/publication" element={<Publication />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/brochure" element={<Brochure />} />
         </Routes>
       </div>
     </Router>
