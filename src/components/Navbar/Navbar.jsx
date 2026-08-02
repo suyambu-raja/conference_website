@@ -13,6 +13,7 @@ const NAV_ITEMS = [
       { label: 'Committee', href: '/committee' },
       { label: 'Venue', href: '/venue' },
       { label: 'Key Dates', href: '/key-dates' },
+      { label: 'Brochure', href: '/brochure' },
     ],
   },
   { label: 'Call for Papers', href: '/call-for-papers' },
@@ -37,6 +38,17 @@ function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
 
   const toggleDropdown = (e) => {
     e.preventDefault();
@@ -65,22 +77,31 @@ function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="navbar__mobile-toggle"
+          className={`navbar__mobile-toggle ${mobileOpen ? 'navbar__mobile-toggle--open' : ''}`}
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label="Toggle navigation menu"
         >
-          {mobileOpen ? '✕' : '☰'}
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
         </button>
+
+        {/* Backdrop */}
+        <div 
+          className={`navbar__backdrop ${mobileOpen ? 'navbar__backdrop--open' : ''}`} 
+          onClick={() => setMobileOpen(false)} 
+        />
 
         {/* Nav Links */}
         <ul className={`navbar__links ${mobileOpen ? 'navbar__links--open' : ''}`}>
-          {NAV_ITEMS.map((item) => {
+          {NAV_ITEMS.map((item, index) => {
             const active = isItemActive(item);
             return (
               <li 
                 key={item.label} 
                 className={item.dropdown ? 'navbar__dropdown-container' : ''}
                 ref={item.dropdown ? dropdownRef : null}
+                style={{ '--nav-index': index }}
               >
                 <div className="navbar__link-wrapper">
                   {item.href.startsWith('#') || (item.href.includes('#') && item.href !== '/') ? (
@@ -120,10 +141,10 @@ function Navbar() {
                   )}
                 </div>
 
-                {item.dropdown && dropdownOpen && (
-                  <ul className="navbar__dropdown-card">
-                    {item.submenu.map((sub) => (
-                      <li key={sub.label}>
+                {item.dropdown && (
+                  <ul className={`navbar__dropdown-card ${dropdownOpen ? 'navbar__dropdown-card--open' : ''}`}>
+                    {item.submenu.map((sub, index) => (
+                      <li key={sub.label} style={{ '--item-index': index }}>
                         <Link 
                           to={sub.href} 
                           className={`navbar__dropdown-item ${location.pathname === sub.href ? 'navbar__dropdown-item--active' : ''}`} 

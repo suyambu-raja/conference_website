@@ -38,6 +38,11 @@
 @media (max-width: 768px) {
   .deadlines-row {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+  }
+
+  .deadline-item {
+    align-items: flex-start;
+    text-align: left;
   }
 }
