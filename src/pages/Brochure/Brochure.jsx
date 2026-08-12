@@ -288,7 +288,7 @@ const Brochure = () => {
             </ul>
 
             <div className="brochure-page__download-section" style={{ marginTop: 'auto', paddingTop: '40px', paddingBottom: '0' }}>
-              <a href="/brochure.pdf" download="ICCSB_2026_Brochure.pdf" className="brochure-page__download-btn brochure-page__download-btn--navy">
+              <a href={`${import.meta.env.BASE_URL}brochure.pdf`} download="ICCSB_2026_Brochure.pdf" className="brochure-page__download-btn brochure-page__download-btn--navy">
                 Download PDF
               </a>
             </div>

@@ -52,7 +52,7 @@ const Home = () => (
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.VITE_BASE_PATH || '/'}>
       <ScrollToTop />
       <div className="app">
         <Routes>
