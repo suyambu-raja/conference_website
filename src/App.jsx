@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import ScrollReveal from './components/ScrollReveal/ScrollReveal';
 import Hero from './components/Hero/Hero';
@@ -52,7 +52,7 @@ const Home = () => (
 
 function App() {
   return (
-    <Router basename={import.meta.env.VITE_BASE_PATH || '/'}>
+    <Router>
       <ScrollToTop />
       <div className="app">
         <Routes>
