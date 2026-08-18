@@ -6,10 +6,11 @@ import '../SubPage.css';
 const SUBMISSION_LINK = 'https://forms.gle/XCEKqZWyvrXVFe1d9';
 
 const GUIDELINES = [
+  'Submissions are open for both Oral Paper Presentations and Poster Presentations.',
   'Submit original, unpublished research work aligned with the conference theme.',
-  'Papers must not be under review or consideration by any other conference or journal.',
+  'Papers and posters must not be under review or consideration by any other conference or journal.',
   'All submissions will undergo a peer-review process for quality and relevance.',
-  'At least one author of each accepted paper must register and present the work.',
+  'At least one author of each accepted paper or poster must register and present the work.',
   'Presentations may be made either on-campus or online, as the conference runs in Hybrid Mode.',
 ];
 
@@ -26,13 +27,13 @@ const Submission = () => {
 
         <div className="center">
           <div className="highlight-banner">
-            Paper Submission Deadline:&nbsp;<strong>17 August 2026</strong>
+            Paper &amp; Poster Submission Deadline:&nbsp;<strong>24 August 2026</strong>
           </div>
         </div>
 
         <p className="subpage__lead">
           Researchers, academicians, industry professionals, research scholars, and students are invited
-          to submit their original research contributions to ICCSB&nbsp;2026 through the official
+          to submit their original research contributions (Papers / Posters) to ICCSB&nbsp;2026 through the official
           submission portal.
         </p>
 

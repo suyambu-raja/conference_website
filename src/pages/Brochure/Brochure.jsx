@@ -134,8 +134,8 @@ const Brochure = () => {
               <table className="brochure-page__table" style={{ marginBottom: '20px' }}>
                 <tbody>
                   <tr>
-                    <td>Paper Submission</td>
-                    <td>: 17-08-2026</td>
+                    <td>Paper &amp; Poster Submission</td>
+                    <td>: 24-08-2026</td>
                   </tr>
                   <tr>
                     <td>Acceptance</td>

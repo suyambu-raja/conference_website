@@ -36,6 +36,10 @@ function Hero() {
 
 
           <div className="hero__content-card">
+            <div className="hero__poster-badge">
+              <span className="hero__poster-badge-dot"></span>
+              <span>Paper &amp; Poster Presentations Available</span>
+            </div>
 
             <h1 className="hero__title">
               ICCSB <span className="hero__title-dash">—</span> 2026

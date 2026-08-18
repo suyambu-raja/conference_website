@@ -2,8 +2,8 @@ import './Deadlines.css';
 
 const DEADLINE_ITEMS = [
   {
-    title: 'Paper Submission Deadline',
-    date: '17 August, 2026',
+    title: 'Paper & Poster Submission Deadline',
+    date: '24 August, 2026',
   },
   {
     title: 'Registration Deadline',

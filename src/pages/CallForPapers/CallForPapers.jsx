@@ -30,9 +30,17 @@ const CallForPapers = () => {
       <SubPageHeader title="Call For Papers" />
 
       <div className="subpage__body">
-        <span className="subpage__eyebrow">AICTE Sponsored · Hybrid Mode · 10 &amp; 11 September 2026</span>
+        <span className="subpage__eyebrow">AICTE Sponsored · Hybrid Mode · Oral &amp; Poster Presentations · 10 &amp; 11 September 2026</span>
         <h2 className="subpage__heading">About the Conference</h2>
         <div className="subpage__heading-underline" />
+
+        <div className="subpage__announcement-banner">
+          <span className="announcement-icon">📢</span>
+          <div>
+            <strong>Presentations:</strong> Both <strong>Oral Paper Presentations</strong> and <strong>Poster Presentations</strong> are accepted and available for all registered tracks.
+          </div>
+        </div>
+
         <p className="subpage__lead">
           This conference aims to bring together researchers, academicians, industry professionals,
           scientists, and students to share their latest research, innovations, and technological

@@ -4,7 +4,7 @@ import Footer from '../../components/Footer/Footer';
 import '../SubPage.css';
 
 const DATES = [
-  ['Paper Submission', '17 August 2026'],
+  ['Paper & Poster Submission', '24 August 2026'],
   ['Acceptance Notification', '24 August 2026'],
   ['Registration Deadline', '31 August 2026'],
   ['Conference Dates', '10 & 11 September 2026'],
